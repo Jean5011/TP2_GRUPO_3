@@ -20,12 +20,15 @@ class EmailTest {
 	
 	@Test
 	public void testValidarCorreo_conOchoDigitos_retornaTrue() {
-		
+		assertTrue(Email.validarCorreo("usuario12345678@dominio.com"));
+		assertTrue(Email.validarCorreo("a1b2c3d4e5@test.com"));
 	}
 	
 	@Test
 	public void testValidarCorreo_sinOchoDigitos_retornaFalse() {
-		
+		assertFalse(Email.validarCorreo("usuario123@dominio.com"));
+        assertFalse(Email.validarCorreo("sin-digitos@test.com"));
+        assertFalse(Email.validarCorreo("muchos123456789@test.com"));
 	}
 	
 	@Test
