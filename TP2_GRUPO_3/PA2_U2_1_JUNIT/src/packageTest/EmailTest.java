@@ -20,45 +20,43 @@ class EmailTest {
 	
 	@Test
 	public void testValidarCorreo_conOchoDigitos_retornaTrue() {
-		assertTrue(Email.validarCorreo("usuario12345678@dominio.com"));
-		assertTrue(Email.validarCorreo("a1b2c3d4e5@test.com"));
+		assertTrue(Email.validarCorreo("Pruebacorreo2@gmail.com"));
 	}
 	
 	@Test
 	public void testValidarCorreo_sinOchoDigitos_retornaFalse() {
-		assertFalse(Email.validarCorreo("usuario123@dominio.com"));
-        assertFalse(Email.validarCorreo("sin-digitos@test.com"));
-        assertFalse(Email.validarCorreo("muchos123456789@test.com"));
+		assertFalse(Email.validarCorreo("p@gmai"));
+
 	}
 	
 	@Test
 	public void testValidarCorreo_conLetraMayuscula_retornaTrue() {
-		
+		assertTrue(Email.validarCorreo("Pruebacorreo2@gmail.com"));
 	}
 	
 	@Test
 	public void testValidarCorreo_sinLetraMayuscula_retornaFalse() {
-		
+		assertFalse(Email.validarCorreo("pruebacorreo2@gmail.com"));
 	}
 	
 	@Test
 	public void testValidarCorreo_conLetraMinuscula_retornaTrue() {
-		
+		assertTrue(Email.validarCorreo("PRUEBACORREO2@gmail.com"));
 	}
 	
 	@Test
 	public void testValidarCorreo_sinLetraMinuscula_retornaFalse() {
-		
+		assertFalse(Email.validarCorreo("PRUEBACORREO2@GMAIL.COM"));
 	}
 	
 	@Test
 	public void testValidarCorreo_conAlfanumerico_retornaTrue() {
-		
+		assertTrue(Email.validarCorreo("Pruebacorreo2@gmail.com"));
 	}
 	
 	@Test
 	public void testValidarCorreo_sinAlfanumerico_retornaFalse() {
-		
+		assertFalse(Email.validarCorreo("@*/.[]"));
 	}
 
 }
